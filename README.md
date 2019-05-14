@@ -40,3 +40,7 @@ As an alternative to downloading the code, click one of the links below to creat
 - [C++](http://cyber-dojo.org/forker/fork/A06DCDA217?avatar=wolf&tag=5)
 - [C#](http://cyber-dojo.org/forker/fork/672E047F5D?avatar=buffalo&tag=8)
 
+# To do
+- [x] Setup git and project
+- [ ] Read existing test
+- [x] Read kata description
