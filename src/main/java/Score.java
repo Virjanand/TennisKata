@@ -19,8 +19,12 @@ public class Score {
         return score1;
     }
 
-    public void increaseScore1() {
-        score1++;
+    public void increaseScore(int player) {
+        if (player == 1) {
+            score1++;
+        } else {
+            score2++;
+        }
     }
 
     public int getScore2() {
