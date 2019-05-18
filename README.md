@@ -61,4 +61,4 @@ As an alternative to downloading the code, click one of the links below to creat
 - [ ] in getScore use return instead of score variable
 - [x] Extract method for check isEndGame
 - [ ] Split method buildAdvantageOrWinScore
-- [ ] Use direct returns in buildAdvantageOrWinScore
+- [x] Use direct returns in buildAdvantageOrWinScore
