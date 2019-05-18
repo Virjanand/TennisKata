@@ -67,4 +67,4 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Inline getDifferenceScore (only used once)
 - [ ] Remove duplication check who is ahead
 - [x] Use playernames
-- [ ] Extract method getWinningPlayer
+- [x] Extract method getWinningPlayer
