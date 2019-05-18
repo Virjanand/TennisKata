@@ -76,14 +76,15 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move scores to Score class
 - [x] Move isEndGame
 - [x] Change wonPoint by giving increaseScore parameter for player number
-- [ ] Remove getters and setters on Score
-- [ ] Move getScore body to Score
+- [x] Remove getters and setters on Score
+- [x] Move getScore body to Score
 - [x] Extract method for isScoreEqual
 - [x] Move isScoreEqual to Score
 - [x] Use getters for player1Name and player2Name in getWinningPlayer
 - [x] Move getWinningPlayer to Score
 - [x] Move buildWin to Score
-- [ ] Extract method getScoreDifference
-- [ ] Move getScoreDifference to Score
-- [ ] Move buildAdvantage to Score
-- [ ] Move buildAdvantageOrWinScore to Score
+- [x] Extract method getScoreDifference
+- [x] Move getScoreDifference to Score
+- [x] Move buildAdvantage to Score
+- [x] Move buildAdvantageOrWinScore to Score
+- [x] Make methods private or package private

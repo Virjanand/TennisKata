@@ -2,14 +2,6 @@ public class TennisGame1 implements TennisGame {
 
     private Score score;
 
-    public String getPlayer1Name() {
-        return player1Name;
-    }
-
-    public String getPlayer2Name() {
-        return player2Name;
-    }
-
     private String player1Name;
     private String player2Name;
 
@@ -20,20 +12,13 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (playerName.equals(this.player1Name))
+        if (playerName.equals(player1Name))
             score.increaseScore(1);
         else
             score.increaseScore(2);
     }
 
     public String getScore() {
-        if (score.isScoreEqual()) {
-            return score.buildEqualScore();
-        } else if (score.isEndGame()) {
-            return score.buildAdvantageOrWinScore(this);
-        } else {
-            return score.buildScore();
-        }
+        return score.buildScore(player1Name, player2Name);
     }
-
 }

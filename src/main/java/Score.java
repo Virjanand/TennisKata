@@ -8,15 +8,11 @@ public class Score {
 
     private static final Map<Integer, String> scores = new HashMap<Integer, String>();
 
-    public Score() {
+    Score() {
         scores.put(0, "Love");
         scores.put(1, "Fifteen");
         scores.put(2, "Thirty");
         scores.put(3, "Forty");
-    }
-
-    int getScore1() {
-        return score1;
     }
 
     void increaseScore(int player) {
@@ -27,52 +23,58 @@ public class Score {
         }
     }
 
-    int getScore2() {
-        return score2;
+    String buildScore(String player1Name, String player2Name) {
+        if (isScoreEqual())
+            return buildEqualScore();
+        if (isEndGame()) {
+            if (isAdvantage())
+                return buildAdvantage(player1Name, player2Name);
+
+            return buildWin(player1Name, player2Name);
+        }
+        return buildScore();
+    }
+
+    private boolean isScoreEqual() {
+        return score1 == score2;
+    }
+
+    private String buildEqualScore() {
+        if (score1 >= 3)
+            return "Deuce";
+        return convertScore(score1) + "-All";
+    }
+
+    private boolean isEndGame() {
+        return score1 >= 4 || score2 >= 4;
+    }
+
+    private boolean isAdvantage() {
+        return getAbsDifferenceScore() == 1;
+    }
+
+    private String buildAdvantage(String player1Name, String player2Name) {
+        return "Advantage " + getWinningPlayer(player1Name, player2Name);
+    }
+
+    private String buildWin(String player1Name, String player2Name) {
+        return "Win for " + getWinningPlayer(player1Name, player2Name);
+    }
+
+    private String buildScore() {
+        return convertScore(score1) + "-" + convertScore(score2);
     }
 
     private String convertScore(int scoreNumber) {
         return scores.get(scoreNumber);
     }
 
-    String buildScore() {
-        return convertScore(getScore1()) + "-" + convertScore(getScore2());
+    private int getAbsDifferenceScore() {
+        return Math.abs(score1 - score2);
     }
 
-    String buildEqualScore() {
-        if (getScore1() >= 3)
-            return "Deuce";
-        return convertScore(getScore1()) + "-All";
-    }
-
-    boolean isEndGame() {
-        return getScore1() >= 4 || getScore2() >= 4;
-    }
-
-    boolean isScoreEqual() {
-        return getScore1() == getScore2();
-    }
-
-    String getWinningPlayer(TennisGame1 game) {
-        if (getScore1() > getScore2()) return game.getPlayer1Name();
-        return game.getPlayer2Name();
-    }
-
-    String buildWin(TennisGame1 game) {
-        return "Win for " + getWinningPlayer(game);
-    }
-
-    int getScoreDifference() {
-        return Math.abs(getScore1() - getScore2());
-    }
-
-    String buildAdvantage(TennisGame1 game) {
-        return "Advantage " + getWinningPlayer(game);
-    }
-
-    String buildAdvantageOrWinScore(TennisGame1 tennisGame1) {
-        if (getScoreDifference() == 1) return buildAdvantage(tennisGame1);
-
-        return buildWin(tennisGame1);
+    private String getWinningPlayer(String player1Name, String player2Name) {
+        if (score1 > score2) return player1Name;
+        return player2Name;
     }
 }
