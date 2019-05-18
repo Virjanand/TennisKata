@@ -31,7 +31,7 @@ public class Score {
         score2++;
     }
 
-    public String convertScore(int scoreNumber) {
+    private String convertScore(int scoreNumber) {
         return scores.get(scoreNumber);
     }
 
@@ -43,5 +43,9 @@ public class Score {
         if (getScore1() >= 3)
             return "Deuce";
         return convertScore(getScore1()) + "-All";
+    }
+
+    public boolean isEndGame() {
+        return getScore1() >= 4 || getScore2() >= 4;
     }
 }

@@ -74,3 +74,5 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move buildScore() to Score class
 - [x] Move buildEqualScore to Score class
 - [x] Move scores to Score class
+- [x] Move isEndGame
+- [ ] 

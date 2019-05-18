@@ -20,15 +20,11 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         if (score.getScore1() == score.getScore2()) {
             return score.buildEqualScore();
-        } else if (isEndGame()) {
+        } else if (score.isEndGame()) {
             return buildAdvantageOrWinScore();
         } else {
             return score.buildScore();
         }
-    }
-
-    private boolean isEndGame() {
-        return score.getScore1() >= 4 || score.getScore2() >= 4;
     }
 
     private String buildAdvantageOrWinScore() {
