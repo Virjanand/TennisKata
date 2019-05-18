@@ -19,7 +19,7 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if (score.getScore1() == score.getScore2()) {
-            return buildEqualScore();
+            return score.buildEqualScore();
         } else if (isEndGame()) {
             return buildAdvantageOrWinScore();
         } else {
@@ -49,11 +49,5 @@ public class TennisGame1 implements TennisGame {
     private String getWinningPlayer() {
         if (score.getScore1() > score.getScore2()) return player1Name;
         return player2Name;
-    }
-
-    private String buildEqualScore() {
-        if (score.getScore1() >= 3)
-            return "Deuce";
-        return score.convertScore(score.getScore1()) + "-All";
     }
 }

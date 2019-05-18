@@ -38,4 +38,10 @@ public class Score {
     public String buildScore() {
         return convertScore(getScore1()) + "-" + convertScore(getScore2());
     }
+
+    public String buildEqualScore() {
+        if (getScore1() >= 3)
+            return "Deuce";
+        return convertScore(getScore1()) + "-All";
+    }
 }
