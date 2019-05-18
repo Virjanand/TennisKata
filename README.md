@@ -49,11 +49,12 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Use string comparison equals not ==
 - [x] Move declaration temp variable tempScore
 - [x] Extract method for checking single score
-- [ ] Extract method for checking equal score
+- [x] Extract method for checking equal score
 - [ ] Extract method for checking win or advantage
 - [x] Use m_score's to buildScore
 - [x] Improve switch with return statements
 - [x] Make map of 0 - 4 with strings
 - [ ] Replace map with enum for scores?
 - [x] Remove unused initialisation for score
-- [ ] 
+- [ ] Guard clause for Deuce
+- [ ] Use convert method to build first equals score
