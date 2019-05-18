@@ -59,6 +59,6 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Guard clause for Deuce
 - [x] Use convert method to build first equals score
 - [ ] in getScore use return instead of score variable
-- [ ] Extract method for check isEndGame
+- [x] Extract method for check isEndGame
 - [ ] Split method buildAdvantageOrWinScore
-- [ ] 
+- [ ] Use direct returns in buildAdvantageOrWinScore
