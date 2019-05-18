@@ -82,6 +82,8 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move isScoreEqual to Score
 - [x] Use getters for player1Name and player2Name in getWinningPlayer
 - [x] Move getWinningPlayer to Score
-- [x] move buildWin to Score
-- [ ] move buildAdvantage to Score
-- [ ] move buildAdvantageOrWinScore to Score
+- [x] Move buildWin to Score
+- [ ] Extract method getScoreDifference
+- [ ] Move getScoreDifference to Score
+- [ ] Move buildAdvantage to Score
+- [ ] Move buildAdvantageOrWinScore to Score

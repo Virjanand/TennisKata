@@ -15,11 +15,11 @@ public class Score {
         scores.put(3, "Forty");
     }
 
-    public int getScore1() {
+    int getScore1() {
         return score1;
     }
 
-    public void increaseScore(int player) {
+    void increaseScore(int player) {
         if (player == 1) {
             score1++;
         } else {
@@ -27,42 +27,52 @@ public class Score {
         }
     }
 
-    public int getScore2() {
+    int getScore2() {
         return score2;
-    }
-
-    public void increaseScore2() {
-        score2++;
     }
 
     private String convertScore(int scoreNumber) {
         return scores.get(scoreNumber);
     }
 
-    public String buildScore() {
+    String buildScore() {
         return convertScore(getScore1()) + "-" + convertScore(getScore2());
     }
 
-    public String buildEqualScore() {
+    String buildEqualScore() {
         if (getScore1() >= 3)
             return "Deuce";
         return convertScore(getScore1()) + "-All";
     }
 
-    public boolean isEndGame() {
+    boolean isEndGame() {
         return getScore1() >= 4 || getScore2() >= 4;
     }
 
-    public boolean isScoreEqual() {
+    boolean isScoreEqual() {
         return getScore1() == getScore2();
     }
 
-    public String getWinningPlayer(TennisGame1 game) {
+    String getWinningPlayer(TennisGame1 game) {
         if (getScore1() > getScore2()) return game.getPlayer1Name();
         return game.getPlayer2Name();
     }
 
-    public String buildWin(TennisGame1 game) {
+    String buildWin(TennisGame1 game) {
         return "Win for " + getWinningPlayer(game);
+    }
+
+    int getScoreDifference() {
+        return Math.abs(getScore1() - getScore2());
+    }
+
+    String buildAdvantage(TennisGame1 game) {
+        return "Advantage " + getWinningPlayer(game);
+    }
+
+    String buildAdvantageOrWinScore(TennisGame1 tennisGame1) {
+        if (getScoreDifference() == 1) return buildAdvantage(tennisGame1);
+
+        return buildWin(tennisGame1);
     }
 }

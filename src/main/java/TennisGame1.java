@@ -30,20 +30,10 @@ public class TennisGame1 implements TennisGame {
         if (score.isScoreEqual()) {
             return score.buildEqualScore();
         } else if (score.isEndGame()) {
-            return buildAdvantageOrWinScore();
+            return score.buildAdvantageOrWinScore(this);
         } else {
             return score.buildScore();
         }
     }
 
-    private String buildAdvantageOrWinScore() {
-        int minusResult = Math.abs(score.getScore1() - score.getScore2());
-        if (minusResult == 1) return buildAdvantage();
-
-        return score.buildWin(this);
-    }
-
-    private String buildAdvantage() {
-        return "Advantage " + score.getWinningPlayer(this);
-    }
 }
