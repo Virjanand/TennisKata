@@ -48,13 +48,13 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String buildAdvantage() {
-        if (m_score1 > m_score2) return "Advantage player1";
-        return "Advantage player2";
+        if (m_score1 > m_score2) return "Advantage " + player1Name;
+        return "Advantage " + player2Name;
     }
 
     private String buildWin() {
-        if (m_score1 > m_score2) return "Win for player1";
-        return "Win for player2";
+        if (m_score1 > m_score2) return "Win for " + player1Name;
+        return "Win for " + player2Name;
     }
 
     private String buildEqualScore() {
