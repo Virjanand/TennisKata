@@ -46,6 +46,6 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Read kata description
 - [ ] Read code
 - [x] Use player name in calling wonPoint
-- [ ] Use string comparison equals not ==
+- [x] Use string comparison equals not ==
 - [ ] Remove temp variable tempScore
 - [ ] 
