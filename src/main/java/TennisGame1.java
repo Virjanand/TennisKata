@@ -3,8 +3,7 @@ import java.util.Map;
 
 public class TennisGame1 implements TennisGame {
 
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+    private Score score;
     private String player1Name;
     private String player2Name;
     private static final Map<Integer, String> scores = new HashMap<Integer, String>();
@@ -13,6 +12,7 @@ public class TennisGame1 implements TennisGame {
     public TennisGame1(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        this.score = new Score();
         scores.put(0, "Love");
         scores.put(1, "Fifteen");
         scores.put(2, "Thirty");
@@ -21,13 +21,13 @@ public class TennisGame1 implements TennisGame {
 
     public void wonPoint(String playerName) {
         if (playerName.equals(this.player1Name))
-            m_score1 += 1;
+            score.increaseScore1();
         else
-            m_score2 += 1;
+            score.increaseScore2();
     }
 
     public String getScore() {
-        if (m_score1 == m_score2) {
+        if (score.getScore1() == score.getScore2()) {
             return buildEqualScore();
         } else if (isEndGame()) {
             return buildAdvantageOrWinScore();
@@ -37,11 +37,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean isEndGame() {
-        return m_score1 >= 4 || m_score2 >= 4;
+        return score.getScore1() >= 4 || score.getScore2() >= 4;
     }
 
     private String buildAdvantageOrWinScore() {
-        int minusResult = Math.abs(m_score1 - m_score2);
+        int minusResult = Math.abs(score.getScore1() - score.getScore2());
         if (minusResult == 1) return buildAdvantage();
 
         return buildWin();
@@ -56,18 +56,18 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getWinningPlayer() {
-        if (m_score1 > m_score2) return player1Name;
+        if (score.getScore1() > score.getScore2()) return player1Name;
         return player2Name;
     }
 
     private String buildEqualScore() {
-        if (m_score1 >= 3)
+        if (score.getScore1() >= 3)
             return "Deuce";
-        return convertScore(m_score1) + "-All";
+        return convertScore(score.getScore1()) + "-All";
     }
 
     private String buildScore() {
-        return convertScore(m_score1) + "-" + convertScore(m_score2);
+        return convertScore(score.getScore1()) + "-" + convertScore(score.getScore2());
     }
 
     private String convertScore(int scoreNumber) {

@@ -68,4 +68,6 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Remove duplication check who is ahead
 - [x] Use playernames
 - [x] Extract method getWinningPlayer
-- [ ] Extract class Score
+- [x] Extract class Score
+- [x] Move field m_score1
+- [x] Move field m_score2
