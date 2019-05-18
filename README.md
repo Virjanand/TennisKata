@@ -53,4 +53,5 @@ As an alternative to downloading the code, click one of the links below to creat
 - [ ] Extract method for checking win or advantage
 - [ ] Use m_score's to buildScore
 - [x] Improve switch with return statements
-- [ ] Make map of 0 - 4 with strings
+- [x] Make map of 0 - 4 with strings
+- [ ] Replace map with enum for scores?

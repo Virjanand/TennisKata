@@ -1,14 +1,22 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class TennisGame1 implements TennisGame {
-    
+
     private int m_score1 = 0;
     private int m_score2 = 0;
     private String player1Name;
     private String player2Name;
+    private static final Map<Integer, String> scores = new HashMap<Integer, String>();
+
 
     public TennisGame1(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        scores.put(0, "Love");
+        scores.put(1, "Fifteen");
+        scores.put(2, "Thirty");
+        scores.put(3, "Forty");
     }
 
     public void wonPoint(String playerName) {
@@ -20,37 +28,30 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        if (m_score1==m_score2)
-        {
-            switch (m_score1)
-            {
+        if (m_score1 == m_score2) {
+            switch (m_score1) {
                 case 0:
-                        score = "Love-All";
+                    score = "Love-All";
                     break;
                 case 1:
-                        score = "Fifteen-All";
+                    score = "Fifteen-All";
                     break;
                 case 2:
-                        score = "Thirty-All";
+                    score = "Thirty-All";
                     break;
                 default:
-                        score = "Deuce";
+                    score = "Deuce";
                     break;
-                
+
             }
-        }
-        else if (m_score1>=4 || m_score2>=4)
-        {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
-        }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
+        } else if (m_score1 >= 4 || m_score2 >= 4) {
+            int minusResult = m_score1 - m_score2;
+            if (minusResult == 1) score = "Advantage player1";
+            else if (minusResult == -1) score = "Advantage player2";
+            else if (minusResult >= 2) score = "Win for player1";
+            else score = "Win for player2";
+        } else {
+            for (int i = 1; i < 3; i++) {
                 score = buildScore(score, i);
             }
         }
@@ -59,25 +60,17 @@ public class TennisGame1 implements TennisGame {
 
     private String buildScore(String score, int player) {
         int tempScore;
-        if (player==1)
+        if (player == 1)
             tempScore = m_score1;
-        else { score+="-"; tempScore = m_score2;}
+        else {
+            score += "-";
+            tempScore = m_score2;
+        }
         score += convertScore(tempScore);
         return score;
     }
 
     private String convertScore(int scoreNumber) {
-        switch(scoreNumber)
-        {
-            case 0:
-                return "Love";
-            case 1:
-                return "Fifteen";
-            case 2:
-                return "Thirty";
-            case 3:
-                return "Forty";
-        }
-        return "";
+        return scores.get(scoreNumber);
     }
 }
