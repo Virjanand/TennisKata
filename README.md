@@ -57,4 +57,5 @@ As an alternative to downloading the code, click one of the links below to creat
 - [ ] Replace map with enum for scores?
 - [x] Remove unused initialisation for score
 - [x] Guard clause for Deuce
-- [ ] Use convert method to build first equals score
+- [x] Use convert method to build first equals score
+- [ ] in getScore use return instead of score variable

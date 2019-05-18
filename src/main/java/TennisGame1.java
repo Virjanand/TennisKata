@@ -43,21 +43,9 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String buildEqualScore() {
-        String score = "";
         if (m_score1 >= 3)
             return "Deuce";
-        switch (m_score1) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-        }
-        return score;
+        return convertScore(m_score1) + "-All";
     }
 
     private String buildScore() {
