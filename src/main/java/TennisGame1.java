@@ -67,22 +67,17 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String convertScore(int scoreNumber) {
-        String scoreText = "";
         switch(scoreNumber)
         {
             case 0:
-                scoreText+="Love";
-                break;
+                return "Love";
             case 1:
-                scoreText+="Fifteen";
-                break;
+                return "Fifteen";
             case 2:
-                scoreText+="Thirty";
-                break;
+                return "Thirty";
             case 3:
-                scoreText+="Forty";
-                break;
+                return "Forty";
         }
-        return scoreText;
+        return "";
     }
 }
