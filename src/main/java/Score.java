@@ -61,4 +61,8 @@ public class Score {
         if (getScore1() > getScore2()) return game.getPlayer1Name();
         return game.getPlayer2Name();
     }
+
+    public String buildWin(TennisGame1 game) {
+        return "Win for " + getWinningPlayer(game);
+    }
 }

@@ -40,14 +40,10 @@ public class TennisGame1 implements TennisGame {
         int minusResult = Math.abs(score.getScore1() - score.getScore2());
         if (minusResult == 1) return buildAdvantage();
 
-        return buildWin();
+        return score.buildWin(this);
     }
 
     private String buildAdvantage() {
         return "Advantage " + score.getWinningPlayer(this);
-    }
-
-    private String buildWin() {
-        return "Win for " + score.getWinningPlayer(this);
     }
 }
