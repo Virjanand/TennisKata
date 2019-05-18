@@ -43,20 +43,24 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String buildAdvantageOrWinScore() {
-        int minusResult = Math.abs(m_score1 - m_score2);
+        int minusResult = Math.abs(getDifferenceScore());
         if (minusResult == 1) return buildAdvantage();
 
         return buildWin();
     }
 
+    private int getDifferenceScore() {
+        return m_score1 - m_score2;
+    }
+
     private String buildAdvantage() {
-        int minusResult = m_score1 - m_score2;
+        int minusResult = getDifferenceScore();
         if (minusResult == 1) return "Advantage player1";
         return "Advantage player2";
     }
 
     private String buildWin() {
-        int minusResult = m_score1 - m_score2;
+        int minusResult = getDifferenceScore();
 
         if (minusResult >= 2) return "Win for player1";
         return "Win for player2";

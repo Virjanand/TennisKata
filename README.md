@@ -62,5 +62,5 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Extract method for check isEndGame
 - [x] Split method buildAdvantageOrWinScore
 - [x] Use direct returns in buildAdvantageOrWinScore
-- [ ] Remove duplication calculate difference scores
+- [x] Remove duplication calculate difference scores
 - [ ] Make conditionals for who is ahead more clear
