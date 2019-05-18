@@ -27,15 +27,13 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        String score;
         if (m_score1 == m_score2) {
-            score = buildEqualScore();
+            return buildEqualScore();
         } else if (isEndGame()) {
-            score = buildAdvantageOrWinScore();
+            return buildAdvantageOrWinScore();
         } else {
-            score = buildScore();
+            return buildScore();
         }
-        return score;
     }
 
     private boolean isEndGame() {
