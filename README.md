@@ -68,3 +68,4 @@ As an alternative to downloading the code, click one of the links below to creat
 - [ ] Remove duplication check who is ahead
 - [x] Use playernames
 - [x] Extract method getWinningPlayer
+- [ ] Extract class Score
