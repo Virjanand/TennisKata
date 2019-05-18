@@ -50,7 +50,7 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move declaration temp variable tempScore
 - [x] Extract method for checking single score
 - [x] Extract method for checking equal score
-- [ ] Extract method for checking win or advantage
+- [x] Extract method for checking win or advantage
 - [x] Use m_score's to buildScore
 - [x] Improve switch with return statements
 - [x] Make map of 0 - 4 with strings
@@ -59,3 +59,6 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Guard clause for Deuce
 - [x] Use convert method to build first equals score
 - [ ] in getScore use return instead of score variable
+- [ ] Extract method for check isEndGame
+- [ ] Split method buildAdvantageOrWinScore
+- [ ] 
