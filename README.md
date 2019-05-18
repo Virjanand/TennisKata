@@ -65,7 +65,7 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Remove duplication calculate difference scores
 - [x] Make conditionals for who is ahead more clear
 - [x] Inline getDifferenceScore (only used once)
-- [ ] Remove duplication check who is ahead
+- [x] Remove duplication check who is ahead
 - [x] Use playernames
 - [x] Extract method getWinningPlayer
 - [ ] Extract class Score
