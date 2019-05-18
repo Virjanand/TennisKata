@@ -1,6 +1,15 @@
 public class TennisGame1 implements TennisGame {
 
     private Score score;
+
+    public String getPlayer1Name() {
+        return player1Name;
+    }
+
+    public String getPlayer2Name() {
+        return player2Name;
+    }
+
     private String player1Name;
     private String player2Name;
 
@@ -35,15 +44,10 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String buildAdvantage() {
-        return "Advantage " + getWinningPlayer();
+        return "Advantage " + score.getWinningPlayer(this);
     }
 
     private String buildWin() {
-        return "Win for " + getWinningPlayer();
-    }
-
-    private String getWinningPlayer() {
-        if (score.getScore1() > score.getScore2()) return player1Name;
-        return player2Name;
+        return "Win for " + score.getWinningPlayer(this);
     }
 }

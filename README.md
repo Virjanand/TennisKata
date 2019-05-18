@@ -77,7 +77,11 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move isEndGame
 - [x] Change wonPoint by giving increaseScore parameter for player number
 - [ ] Remove getters and setters on Score
-- [ ] Move getScore inside to Score
+- [ ] Move getScore body to Score
 - [x] Extract method for isScoreEqual
 - [x] Move isScoreEqual to Score
-- [ ] Move check on equalScore to Score
+- [x] Use getters for player1Name and player2Name in getWinningPlayer
+- [x] Move getWinningPlayer to Score
+- [ ] move buildWin to Score
+- [ ] move buildAdvantage to Score
+- [ ] move buildAdvantageOrWinScore to Score

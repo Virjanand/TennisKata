@@ -56,4 +56,9 @@ public class Score {
     public boolean isScoreEqual() {
         return getScore1() == getScore2();
     }
+
+    public String getWinningPlayer(TennisGame1 game) {
+        if (getScore1() > getScore2()) return game.getPlayer1Name();
+        return game.getPlayer2Name();
+    }
 }
