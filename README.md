@@ -63,4 +63,4 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Split method buildAdvantageOrWinScore
 - [x] Use direct returns in buildAdvantageOrWinScore
 - [x] Remove duplication calculate difference scores
-- [ ] Make conditionals for who is ahead more clear
+- [x] Make conditionals for who is ahead more clear
