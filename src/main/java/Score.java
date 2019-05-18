@@ -52,4 +52,8 @@ public class Score {
     public boolean isEndGame() {
         return getScore1() >= 4 || getScore2() >= 4;
     }
+
+    public boolean isScoreEqual() {
+        return getScore1() == getScore2();
+    }
 }

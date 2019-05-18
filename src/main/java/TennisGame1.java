@@ -18,7 +18,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (score.getScore1() == score.getScore2()) {
+        if (score.isScoreEqual()) {
             return score.buildEqualScore();
         } else if (score.isEndGame()) {
             return buildAdvantageOrWinScore();

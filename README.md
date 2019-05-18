@@ -76,3 +76,8 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Move scores to Score class
 - [x] Move isEndGame
 - [x] Change wonPoint by giving increaseScore parameter for player number
+- [ ] Remove getters and setters on Score
+- [ ] Move getScore inside to Score
+- [x] Extract method for isScoreEqual
+- [x] Move isScoreEqual to Score
+- [ ] Move check on equalScore to Score
