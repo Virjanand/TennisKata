@@ -1,22 +1,13 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class TennisGame1 implements TennisGame {
 
     private Score score;
     private String player1Name;
     private String player2Name;
-    private static final Map<Integer, String> scores = new HashMap<Integer, String>();
-
 
     public TennisGame1(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
         this.score = new Score();
-        scores.put(0, "Love");
-        scores.put(1, "Fifteen");
-        scores.put(2, "Thirty");
-        scores.put(3, "Forty");
     }
 
     public void wonPoint(String playerName) {
@@ -32,7 +23,7 @@ public class TennisGame1 implements TennisGame {
         } else if (isEndGame()) {
             return buildAdvantageOrWinScore();
         } else {
-            return buildScore();
+            return score.buildScore();
         }
     }
 
@@ -63,14 +54,6 @@ public class TennisGame1 implements TennisGame {
     private String buildEqualScore() {
         if (score.getScore1() >= 3)
             return "Deuce";
-        return convertScore(score.getScore1()) + "-All";
-    }
-
-    private String buildScore() {
-        return convertScore(score.getScore1()) + "-" + convertScore(score.getScore2());
-    }
-
-    private String convertScore(int scoreNumber) {
-        return scores.get(scoreNumber);
+        return score.convertScore(score.getScore1()) + "-All";
     }
 }

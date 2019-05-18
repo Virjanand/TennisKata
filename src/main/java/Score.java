@@ -1,7 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Score {
 
     private int score1 = 0;
     private int score2 = 0;
+
+    private static final Map<Integer, String> scores = new HashMap<Integer, String>();
+
+    public Score() {
+        scores.put(0, "Love");
+        scores.put(1, "Fifteen");
+        scores.put(2, "Thirty");
+        scores.put(3, "Forty");
+    }
 
     public int getScore1() {
         return score1;
@@ -17,5 +29,13 @@ public class Score {
 
     public void increaseScore2() {
         score2++;
+    }
+
+    public String convertScore(int scoreNumber) {
+        return scores.get(scoreNumber);
+    }
+
+    public String buildScore() {
+        return convertScore(getScore1()) + "-" + convertScore(getScore2());
     }
 }
