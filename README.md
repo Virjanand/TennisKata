@@ -48,4 +48,6 @@ As an alternative to downloading the code, click one of the links below to creat
 - [x] Use player name in calling wonPoint
 - [x] Use string comparison equals not ==
 - [x] Move declaration temp variable tempScore
-- [ ] 
+- [x] Extract method for checking single score
+- [ ] Extract method for checking equal score
+- [ ] Extract method for checking win or advantage

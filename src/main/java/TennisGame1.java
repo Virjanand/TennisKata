@@ -51,27 +51,38 @@ public class TennisGame1 implements TennisGame {
         {
             for (int i=1; i<3; i++)
             {
-                int tempScore;
-                if (i==1)
-                    tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
+                score = buildScore(score, i);
             }
         }
         return score;
+    }
+
+    private String buildScore(String score, int player) {
+        int tempScore;
+        if (player==1)
+            tempScore = m_score1;
+        else { score+="-"; tempScore = m_score2;}
+        score += convertScore(tempScore);
+        return score;
+    }
+
+    private String convertScore(int scoreNumber) {
+        String scoreText = "";
+        switch(scoreNumber)
+        {
+            case 0:
+                scoreText+="Love";
+                break;
+            case 1:
+                scoreText+="Fifteen";
+                break;
+            case 2:
+                scoreText+="Thirty";
+                break;
+            case 3:
+                scoreText+="Forty";
+                break;
+        }
+        return scoreText;
     }
 }
