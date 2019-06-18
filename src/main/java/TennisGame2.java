@@ -21,8 +21,6 @@ public class TennisGame2 implements TennisGame
     		return "Deuce";
         if (isEqualScore())
 			return convertScore(p1point) + "-All";
-        if (isPlayer1Ahead() || isPlayer2Ahead())
-			return convertScore(p1point) + "-" + convertScore(p2point);
         if (isWinPlayer(p1point, p2point))
             return "Win for player1";
         if (isWinPlayer(p2point, p1point))
@@ -32,23 +30,15 @@ public class TennisGame2 implements TennisGame
         if (isAdvantagePlayer(p2point, p1point))
 			return "Advantage player2";
         
-        return "";
+        return convertScore(p1point) + "-" + convertScore(p2point);
     }
 
 	private boolean isWinPlayer(int p1point, int p2point) {
-		return p1point>=4 && p2point>=0 && (p1point-p2point)>=2;
+		return p1point>=4 && (p1point-p2point)>=2;
 	}
 
 	private boolean isAdvantagePlayer(int p1point, int p2point) {
 		return p1point > p2point && p2point >= 3;
-	}
-
-	private boolean isPlayer2Ahead() {
-		return p2point>p1point && p2point < 4;
-	}
-
-	private boolean isPlayer1Ahead() {
-		return p1point>p2point && p1point < 4;
 	}
 
 	private boolean isDeuce() {
