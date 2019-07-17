@@ -1,12 +1,14 @@
+import score.Advantage;
 import score.Deuce;
 import score.Equals;
 import score.Score2;
+import score.Win;
 
 public class TennisGame2 implements TennisGame
 {
     private Score2 score = new Equals(0,0);
     private String player1Name;
-    public TennisGame2(String player1Name, String player2Name) {
+    TennisGame2(String player1Name) {
         this.player1Name = player1Name;
     }
 
@@ -19,28 +21,17 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
     	if (score instanceof Deuce)
-    		return "Deuce";
-        if (isEqualScore())
+    		return score.getScore();
+        if (score instanceof Equals)
 			return convertScore(score.getP1point()) + "-All";
-        if (isWinPlayer(score.getP1point(), score.getP2point()))
-            return "Win for player1";
-        if (isWinPlayer(score.getP2point(), score.getP1point()))
-			return "Win for player2";
-        if (isAdvantagePlayer(score.getP1point(), score.getP2point()))
-			return "Advantage player1";
-        if (isAdvantagePlayer(score.getP2point(), score.getP1point()))
-			return "Advantage player2";
-        
+        if(score instanceof Win){
+        	return score.getScore();
+		}
+        if (score instanceof Advantage){
+        	return score.getScore();
+		}
         return convertScore(score.getP1point()) + "-" + convertScore(score.getP2point());
     }
-
-	private boolean isWinPlayer(int p1point, int p2point) {
-		return p1point>=4 && (p1point-p2point)>=2;
-	}
-
-	private boolean isAdvantagePlayer(int p1point, int p2point) {
-		return p1point > p2point && p2point >= 3;
-	}
 
 	private boolean isEqualScore() {
 		return score.getP1point() == score.getP2point();

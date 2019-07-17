@@ -23,6 +23,10 @@ public class Score2 {
         return this;
     }
 
+    public String getScore(){
+        return "Deuce";
+    }
+
     public int getP2point() {
         return p2point;
     }
